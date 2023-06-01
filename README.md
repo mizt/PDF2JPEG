@@ -5,7 +5,7 @@
 [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) required.
 
 ```
-$ xcrun clang++ -ObjC++ -lc++ ./PDF2JPEG.mm -fobjc-arc -framework Cocoa -o PDF2JPEG
+$ xcrun clang++ -ObjC++ -O3 -std=c++20 -Wc++20-extensions ./PDF2JPEG.mm -fobjc-arc -framework Cocoa -o PDF2JPEG
 ```
 
 #### usage
