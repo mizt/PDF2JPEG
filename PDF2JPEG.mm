@@ -1,6 +1,5 @@
 #import <Cocoa/Cocoa.h>
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#define STB_IMAGE_IMPLEMENTATION
 #define STBI_ONLY_JPEG
 namespace stb_image { 
 	#import "stb_image_write.h" 
