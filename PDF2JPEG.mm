@@ -49,9 +49,11 @@ int main(int argc, char *argv[]) {
 				NSImage *img = [[NSImage alloc] init];
 				[img addRepresentation:PDFImgRep];
 				
+				[NSGraphicsContext saveGraphicsState];
 				NSGraphicsContext *graphicsContext = (NSGraphicsContext *)[[NSGraphicsContext currentContext] CGContext];
 				CGImageRef cgImage = [img CGImageForProposedRect:&rect context:graphicsContext hints:nil];
 				CGContextDrawImage(bitmapContext,NSRectToCGRect(rect),cgImage);
+				[NSGraphicsContext restoreGraphicsState];
 				
 				for(int n=0; n<width*height; n++) {
 					
