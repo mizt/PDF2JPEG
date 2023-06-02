@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 			
 			for(int page=0; page<pages; page++) {
 				
-				// NSLog(@"%d",page)
+				// NSLog(@"%d",page);
 				for(int n=0; n<width*height; n++) pixels[n] = 0xFFFFFFFF; 
 				
 				[PDFImgRep setCurrentPage:page];
