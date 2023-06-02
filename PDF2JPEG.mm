@@ -40,7 +40,10 @@ int main(int argc, char *argv[]) {
 			int cnt = 0;
 			
 			for(int page=0; page<pages; page++) {
-								
+				
+				// NSLog(@"%d",page)
+				for(int n=0; n<width*height; n++) pixels[n] = 0xFFFFFFFF; 
+				
 				[PDFImgRep setCurrentPage:page];
 				
 				NSImage *img = [[NSImage alloc] init];
@@ -59,6 +62,9 @@ int main(int argc, char *argv[]) {
 					
 					if(alpha==0xFF) {
 						pixels[n] = alpha<<24|pixels[n]>>8;
+					}
+					else if(alpha==0) {
+						pixels[n] = 0xFFFFFFFF;
 					}
 					else {
 						float dry = alpha/255.0;
